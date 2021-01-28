@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* .box {
         padding: 100px 0;
@@ -15,9 +20,27 @@
         display: inline-block;
       } */
       body {
+        font-family: "Hachi Maru Pop", cursive;
         max-width: 960px;
         background: #eee;
+        height: 100vh;
         margin: 20px auto;
+        text-align: center;
+      }
+
+      a:link {
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+      }
+
+      a:hover,
+      a:active {
+        color: #ff93d2;
+      }
+
+      #app {
+        margin: auto;
       }
 
       p,
@@ -44,10 +67,10 @@
     </style>
   </head>
   <body>
-    <h1>Hello Vue</h1>
+    <h1>Book List 📕📘📙📗</h1>
 
     <div id="app">
-      <a :href="url">the best website</a>
+      <a :href="url">the best website to learn web technologies</a>
 
       <!-- <div v-if="showBooks">
         <p>{{title}} - {{age}} - {{author}}</p>
@@ -68,12 +91,12 @@
 
       <ul>
         <li
-          v-for="book in filteredBooks"
+          v-for="book in books"
           :class="{fav: book.isFav}"
           @click="book.isFav=!book.isFav"
         >
           <img :src="book.img" :alt="book.title" />
-          <h3>{{book.title}}</h3>
+          <h2>{{book.title}}</h2>
           <p>{{book.author}}</p>
         </li>
       </ul>
